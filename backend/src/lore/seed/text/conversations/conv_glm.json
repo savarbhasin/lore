@@ -1,0 +1,137 @@
+{
+ "conversations": [
+  {
+   "channel": "#team-identity",
+   "title": "Flaky session refresh test",
+   "days_ago": 158.49,
+   "messages": [
+    {
+     "author": "hana",
+     "minutes_after": 0,
+     "text": "Good morning \u2014 the test in the session refresh suite failed again on CI overnight. It passed locally for me twice. Has anyone else seen it? \ud83d\ude4f",
+     "mentions": []
+    },
+    {
+     "author": "omar",
+     "minutes_after": 19.0,
+     "text": "yeah it's a clock race, the test asserts on the token expiry before the fake clock advances. look:\n```\nit('refreshes near expiry', () => {\n  advanceClock(0)\n  expect(token.expiresIn).toBe(300)\n})\n```\nit needs to advance past the skew first. i'll push a fix after standup",
+     "mentions": []
+    },
+    {
+     "author": "hana",
+     "minutes_after": 28.0,
+     "text": "Ah, that explains it \u2014 thank you for digging in! I'll re-trigger the pipeline once your fix lands.",
+     "mentions": []
+    },
+    {
+     "author": "omar",
+     "minutes_after": 32.0,
+     "text": "\ud83d\udc4d will drop the PR link here when it's up",
+     "mentions": []
+    }
+   ]
+  },
+  {
+   "channel": "#deploys",
+   "title": "Thursday release window",
+   "days_ago": 87.19,
+   "messages": [
+    {
+     "author": "lena",
+     "minutes_after": 0,
+     "text": "Reminder that Thursday's release window is 2\u20134pm. Please have all changes tagged and reviewed by noon. Sofia \u2014 the notifications bundle is still unreviewed, please find a reviewer today. Maya \u2014 please confirm the smoke checks are green before we open the window.",
+     "mentions": [
+      "notifications",
+      "sofia",
+      "maya"
+     ]
+    },
+    {
+     "author": "sofia",
+     "minutes_after": 34.0,
+     "text": "On it!! \ud83d\ude80 Grabbing a reviewer now \u2014 the bundle is just copy tweaks and one icon swap, should be super quick! \ud83c\udfa8",
+     "mentions": []
+    },
+    {
+     "author": "maya",
+     "minutes_after": 45.0,
+     "text": "Smoke checks are green as of this morning \u2705 https://dash.northwind.dev/deploys/smoke \u2014 I'll re-run them right before the window opens and post results here. Thanks both!",
+     "mentions": []
+    }
+   ]
+  },
+  {
+   "channel": "#frontend",
+   "title": "Checkout summary polish",
+   "days_ago": 79.36,
+   "messages": [
+    {
+     "author": "aisha",
+     "minutes_after": 0,
+     "text": "Tom! The new checkout summary cards are live on staging \u2014 the skeleton shimmer finally matches the design tokens \ud83c\udf89 take a peek when you get a sec! https://dash.northwind.dev/frontend/checkout-summary",
+     "mentions": [
+      "checkout",
+      "tom"
+     ]
+    },
+    {
+     "author": "tom",
+     "minutes_after": 14.0,
+     "text": "saw it. looks good. shimmer timing feels slow on the order total though",
+     "mentions": []
+    },
+    {
+     "author": "aisha",
+     "minutes_after": 19.0,
+     "text": "Ooh good catch!! It's set to 1.8s \u2014 I'll drop it to 1.2 and it should feel way snappier. Want me to bump the border radius on the card too while I'm in there?",
+     "mentions": []
+    },
+    {
+     "author": "tom",
+     "minutes_after": 41.0,
+     "text": "sure. ship it",
+     "mentions": []
+    }
+   ]
+  },
+  {
+   "channel": "#social",
+   "title": "Birthday lunch spot",
+   "days_ago": 42.66,
+   "messages": [
+    {
+     "author": "hana",
+     "minutes_after": 0,
+     "text": "Good morning all \u2014 does anyone have a recommendation for a quiet caf\u00e9 near the office for a birthday lunch on Friday? \ud83c\udf82",
+     "mentions": []
+    },
+    {
+     "author": "priya",
+     "minutes_after": 26.0,
+     "text": "The place on Alder Street is quiet before 1pm and they take reservations for groups. I keep a short list of lunch spots near the office here: https://notes.northwind.dev/priya/lunch-list",
+     "mentions": []
+    },
+    {
+     "author": "hana",
+     "minutes_after": 33.0,
+     "text": "That list is wonderful, thank you Priya! I will book Alder Street for Friday at noon. \ud83d\ude4f",
+     "mentions": [
+      "priya"
+     ]
+    },
+    {
+     "author": "priya",
+     "minutes_after": 51.0,
+     "text": "Happy to help. If the birthday person prefers somewhere livelier, the taqueria two blocks north is louder but the food is excellent.",
+     "mentions": []
+    },
+    {
+     "author": "hana",
+     "minutes_after": 57.0,
+     "text": "Noted \u2014 I will keep that as a backup option. Hope your week is going well!",
+     "mentions": []
+    }
+   ]
+  }
+ ]
+}

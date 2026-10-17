@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+node_modules/
+.next/
+.pytest_cache/
+.DS_Store
+northwind-platform/
+.cache/
+backend/src/lore/seed/text/.progress/
+
+# kept locally, not published
+demo-video/
+docs/

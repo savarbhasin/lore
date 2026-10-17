@@ -1,0 +1,588 @@
+{
+ "conversations": [
+  {
+   "channel": "#incidents",
+   "days_ago": 125.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [
+      "catalog"
+     ],
+     "minutes_after": 0,
+     "text": "Catalog import running 3h over. Overlapping morning peak."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "on it. import stuck on one vendor feed"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "The feed has 10x the usual products. Vendor bulk upload."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Skipping the bulk feed for today, catching up overnight."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Response times recovering."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "Import moved an hour earlier permanently. No more overlap."
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 105,
+     "text": "Bulk-feed guard added: oversized feeds defer to night."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "Good fix pair. Closing."
+    }
+   ],
+   "title": "import overlap"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 98.0,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "ski trip countdown: 3 WEEKS. falling practice intensifies"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "My living-room slope training is complete. I am ready (I am not ready) \u26f7\ufe0f"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "board waxed. bindings checked. war ready"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Bunny slope gang assemble!! \ud83d\udc30"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "lift tickets booked. lessons booked. first-aid kit packed (for fatima)"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "RUDE. accurate. but rude"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "Apr\u00e8s-ski snack pack: assembled \ud83c\udf6b"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 105,
+     "text": "never-skied gang: me + fatima. solidarity"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "SOLIDARITY. we fall together \u26f7\ufe0f"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 135,
+     "text": "last-spot gang reporting. also never skied. trio of falling"
+    }
+   ],
+   "title": "ski countdown"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 98.0,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "team brunch menu poll: shakshuka vs pancakes"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "SHAKSHUKA. no contest \ud83c\udf73"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "pancakes!! with lemon and sugar!!"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "both. this is brunch, not a competition"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "diego gets it. BOTH"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "Both!! I will bring fruit \ud83d\ude4f"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "BOTH wins. cooking both saturday"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 105,
+     "text": "Brunch democracy works \ud83c\udf73\ud83e\udd5e"
+    }
+   ],
+   "title": "brunch poll"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 132.0,
+   "messages": [
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "hot take: monday standup should be async forever"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "seconded. motion passed. meeting over"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "async standups + friday demos. the perfect system"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "wait we still have monday standup??"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "We do. It is 15 minutes. You have attended 40 of them"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "i thought those were dreams"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "Async-first, sync when stuck. The actual policy."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "policy acknowledged. meetings remain (short) \ud83d\udc80"
+    }
+   ],
+   "title": "standup discourse"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 175.0,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Tom's first year retrospective: one-liners, zero drama, all green."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "thanks."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "tom's reviews are the best!! short and always right \ud83c\udf89"
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "The metrics review habit Tom started caught two incidents early."
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Well deserved recognition!"
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "team effort."
+    }
+   ],
+   "title": "tom year one"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 102.0,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [
+      "identity-api"
+     ],
+     "minutes_after": 0,
+     "text": "Version tagging deploy: tokens carry client version now."
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Old versions behave as before. Verified."
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "My diagrams are current with this!"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "mobile matrix will confirm."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 100,
+     "text": "Matrix green! All versions validate \ud83c\udf1f"
+    }
+   ],
+   "title": "version tagging live"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 142.0,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Hamster wardrobe: THREE shoes now. He is building something \ud83d\udc39"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "A shoe golem. Obviously"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "shoe golem era \ud83e\udd7f"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "my fish judges your hamster. silently"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "The invoice for rent remains unpaid AND eaten \ud83d\udc9b"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "Send the shoe golem my regards"
+    }
+   ],
+   "title": "shoe golem"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 162.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Vinyl night 3: the synth episode. All ambient, all night."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "i will bring ONE punk record. for balance \ud83c\udfb8"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "balance is important. bringing snacks"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Ambiance keyboard: ready \ud83c\udfb9"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "merge conflict ambient set?? scales at 60bpm"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "transcendent. i'm there"
+    }
+   ],
+   "title": "synth night"
+  },
+  {
+   "channel": "#eng",
+   "days_ago": 150.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Sampling retrospective: 10% caught everything 1% missed. Keeping it."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "overhead negligible. dashboards better."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Good tradeoff documented. Stealing for gateway."
+    },
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Thanks. Numbers going in the review."
+    }
+   ],
+   "title": "sampling retro"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 152.0,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [
+      "tom"
+     ],
+     "minutes_after": 0,
+     "text": "Tom's metrics habit is now team policy. The anomaly that wasn't (load test) proved the value."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "policy. ok."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "The 503-that-wasn't is now a team legend."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "legend status!! \ud83c\udf89"
+    }
+   ],
+   "title": "metrics policy"
+  },
+  {
+   "channel": "#oncall",
+   "days_ago": 176.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "handoff: quiet winter. spring prep docs linked."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "taking over. winters end. springs come."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "poetic handoff \ud83d\udcdf"
+    }
+   ],
+   "title": "seasons handoff"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 115.0,
+   "messages": [
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "five months in!! time flies. thanks for all the reviews everyone"
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "five months!! you're basically senior now (kidding) \ud83c\udf1f"
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "your router docs questions made the README better. keep asking."
+    },
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Lovely to have you on the team, Dev."
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "best team!! here's to the next five \ud83c\udf89"
+    }
+   ],
+   "title": "dev five months"
+  },
+  {
+   "channel": "#team-identity",
+   "days_ago": 145.0,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "userinfo retry anniversary: a year of surviving provider hiccups."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "The single re-attempt that saved a thousand logins \ud83c\udf1f"
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Small change. Large reliability."
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "My favorite pattern: fail soft, try once more!"
+    }
+   ],
+   "title": "retry anniversary"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 160.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Header normalization anniversary: one bad client, one error shape."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "Five shapes to one. Still holding."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "good normalization. good."
+    }
+   ],
+   "title": "headers anniversary"
+  }
+ ]
+}

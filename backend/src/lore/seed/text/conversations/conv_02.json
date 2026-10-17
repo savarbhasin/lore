@@ -1,0 +1,754 @@
+{
+ "conversations": [
+  {
+   "channel": "#team-ledger",
+   "days_ago": 1.2,
+   "messages": [
+    {
+     "author": "ines",
+     "mentions": [
+      "ledger"
+     ],
+     "minutes_after": 0,
+     "text": "hey!! the ledger dashboard is showing entries from yesterday as pending. is the relay behind or is the dashboard stale?"
+    },
+    {
+     "author": "samir",
+     "mentions": [
+      "services/ledger/outbox.py",
+      "ledger"
+     ],
+     "minutes_after": 25,
+     "text": "Relay is fine \u2014 save() wrote everything last night. The dashboard caches for an hour, check the outbox table directly if you need fresh numbers."
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "you're right, direct query shows all posted!! dashboard just being lazy \ud83d\ude05"
+    }
+   ],
+   "title": "ledger dashboard stale"
+  },
+  {
+   "channel": "#team-ledger",
+   "days_ago": 8.0,
+   "messages": [
+    {
+     "author": "nora",
+     "mentions": [
+      "services/ledger/models.py",
+      "ledger"
+     ],
+     "minutes_after": 0,
+     "text": "Proposal: add a kind field to LedgerEntry (payments, refunds, adjustments). Reporting currently infers kind from amount signs, which breaks on zero-amount adjustments."
+    },
+    {
+     "author": "samir",
+     "mentions": [
+      "services/ledger/models.py"
+     ],
+     "minutes_after": 50,
+     "text": "Support this. Code sketch:\n```\nclass LedgerEntry:\n    kind: str = 'unknown'  # backfill default\n```\nOld entries read back as unknown, new ones stamped. Small migration."
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 80,
+     "text": "Agreed on the default. I will write it up as a ticket."
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 110,
+     "text": "happy to take that ticket if nobody else wants it!"
+    }
+   ],
+   "title": "LedgerEntry kind field"
+  },
+  {
+   "channel": "#team-ledger",
+   "days_ago": 7.5,
+   "messages": [
+    {
+     "author": "raj",
+     "mentions": [
+      "services/refunds/workflow.py",
+      "refunds"
+     ],
+     "minutes_after": 0,
+     "text": "hi sorry dumb question, where does the refund approval actually happen? in workflow.py or in the app?"
+    },
+    {
+     "author": "samir",
+     "mentions": [
+      "services/refunds/workflow.py",
+      "services/refunds/app.py",
+      "refunds"
+     ],
+     "minutes_after": 20,
+     "text": "Not dumb! app.py creates the refund record, workflow.py drives the state transitions including approval. So both, different jobs."
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 28,
+     "text": "ohh ok that makes sense now, thank you!!"
+    }
+   ],
+   "title": "refund approval location"
+  },
+  {
+   "channel": "#team-ledger",
+   "days_ago": 14.0,
+   "messages": [
+    {
+     "author": "samir",
+     "mentions": [
+      "services/ledger/handlers/post_entry.py",
+      "ledger"
+     ],
+     "minutes_after": 0,
+     "text": "post_entry will now return the sequence number. Two services were doing write-then-read just to get it."
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Good improvement. Please make sure the audit view uses it instead of re-querying."
+    },
+    {
+     "author": "samir",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Already updated the audit view in the same diff."
+    }
+   ],
+   "title": "post_entry returns sequence"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 0.7,
+   "messages": [
+    {
+     "author": "kabir",
+     "mentions": [
+      "api-gateway"
+     ],
+     "minutes_after": 0,
+     "text": "hi!! i'm looking at the gateway routes for the first time, where does dispatch() actually match paths? i got a bit lost in routes.py"
+    },
+    {
+     "author": "lucas",
+     "mentions": [
+      "services/api_gateway/routes.py",
+      "api-gateway"
+     ],
+     "minutes_after": 15,
+     "text": "Welcome to the gateway! dispatch() in services/api_gateway/routes.py matches longest-prefix-first. Start from the route table at the top of the file, the matching logic follows it."
+    },
+    {
+     "author": "kabir",
+     "mentions": [],
+     "minutes_after": 28,
+     "text": "found it, thank you!! the table makes way more sense now"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "also the debug logs show the matched route now, super helpful when you're learning \ud83d\uddfa\ufe0f"
+    }
+   ],
+   "title": "gateway dispatch orientation"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 2.3,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [
+      "postgres-main"
+     ],
+     "minutes_after": 0,
+     "text": "Staging wipe of postgres-main is done. If your test data is gone, that is why. Prod untouched."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "noted. my fixtures were in the persistent env."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "mine got wiped lol, re-seeding now, no worries \ud83c\udf31"
+    }
+   ],
+   "title": "staging wipe done"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 5.5,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [
+      "kafka"
+     ],
+     "minutes_after": 0,
+     "text": "kafka broker 2 disk at 80%. watching."
+    },
+    {
+     "author": "lucas",
+     "mentions": [
+      "kafka"
+     ],
+     "minutes_after": 30,
+     "text": "Retention change from last week should start biting soon. If it hits 85 I will move partitions."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 200,
+     "text": "down to 71%. resolved."
+    }
+   ],
+   "title": "kafka broker disk watch"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 12.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [
+      "services/feature_flags/app.py",
+      "feature-flags"
+     ],
+     "minutes_after": 0,
+     "text": "FeatureFlagService now supports percentage rollouts \u2014 set_flag takes an optional rollout int, is_enabled hashes the subject. Growth asked for self-serve canary percentages."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Please add evaluation debug logging before growth starts using it, otherwise rollout issues will be undebuggable."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "Fair point, adding that first."
+    }
+   ],
+   "title": "percentage rollouts in flags"
+  },
+  {
+   "channel": "#team-growth",
+   "days_ago": 1.6,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [
+      "catalog"
+     ],
+     "minutes_after": 0,
+     "text": "catalog deploy going out in 10 min. just the badges change, low risk."
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Deployed clean. Spot-checked badges on staging first, all good."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "prod looks good too. done."
+    }
+   ],
+   "title": "catalog badges deploy"
+  },
+  {
+   "channel": "#team-growth",
+   "days_ago": 4.2,
+   "messages": [
+    {
+     "author": "chloe",
+     "mentions": [
+      "notifications"
+     ],
+     "minutes_after": 0,
+     "text": "Consumer lag on notifications is creeping up again \u2014 3k and climbing. Not alarming yet, but I am watching it."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "i see it too. want me to pre-scale the consumers?"
+    },
+    {
+     "author": "chloe",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Yes please, add two. If it keeps climbing I will dig into the template rendering path."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "scaled. lag flattening already \ud83d\udc4d"
+    }
+   ],
+   "title": "notifications lag creeping"
+  },
+  {
+   "channel": "#team-growth",
+   "days_ago": 8.8,
+   "messages": [
+    {
+     "author": "fatima",
+     "mentions": [
+      "services/search/indexer.py",
+      "search"
+     ],
+     "minutes_after": 0,
+     "text": "Question on build_index: does it reindex everything nightly, or only changed products?"
+    },
+    {
+     "author": "jack",
+     "mentions": [
+      "services/search/indexer.py",
+      "search"
+     ],
+     "minutes_after": 25,
+     "text": "everything, full rebuild. takes like 3 hours lol. we've talked about incremental forever"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "That explains the nightly load spike. I might take a stab at incremental next sprint."
+    }
+   ],
+   "title": "search reindex scope"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 1.9,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "new album just dropped and it is SO good. listening on loop today \ud83c\udfa7"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 12,
+     "text": "link??"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 18,
+     "text": "check #music pins, dropped it there"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "third track is my favorite so far \ud83c\udfb6"
+    }
+   ],
+   "title": "new album Friday"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 6.3,
+   "messages": [
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Anyone going to the jazz night next Thursday? \ud83c\udfb7"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "me! been meaning to go for months"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Yay!! Getting tickets tomorrow, want me to grab you one?"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "yes please"
+    }
+   ],
+   "title": "jazz night"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 15.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "My focus playlist hit 200 followers. I have peaked professionally."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "drop the link bestie \ud83c\udfa7"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "It is mostly ambient synth. No skips, only vibes."
+    }
+   ],
+   "title": "focus playlist milestone"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 185.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Welcome to the team, Julia! For those who have not met her, Julia joined identity recently \ud83c\udf89"
+    },
+    {
+     "author": "hana",
+     "mentions": [
+      "julia"
+     ],
+     "minutes_after": 30,
+     "text": "Welcome Julia!! The identity team is lovely, you will have fun here \ud83c\udf1f"
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Welcome."
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "Thank you all! Excited to be here."
+    }
+   ],
+   "title": "welcome Julia"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 9.0,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Book club pick for this month: a mystery novel, per the vote! Meeting on the 24th \ud83d\udcda"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "I voted for sci-fi but mystery works. Ordering my copy now."
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "I have already finished it. No spoilers, but the ending is worth it."
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "Nora!! No spoilers means no hints about the ending either \ud83d\ude04"
+    }
+   ],
+   "title": "book club pick"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 20.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "hiking this saturday, moderate trail, leaving at 8am. who's in?"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "in. bringing extra water this time"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "In! I need to break in my new boots anyway \ud83e\udd7e"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 80,
+     "text": "perfect, see you at the trailhead"
+    }
+   ],
+   "title": "Saturday hike"
+  },
+  {
+   "channel": "#eng-leads",
+   "days_ago": 3.0,
+   "messages": [
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Platform headcount request is in for next quarter. Two roles: one SRE, one platform engineer."
+    },
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Support from payments side. The on-call load data backs it."
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "Same here. Checkout on-call has been heavy since the holiday ramp."
+    }
+   ],
+   "title": "platform headcount request"
+  },
+  {
+   "channel": "#eng-leads",
+   "days_ago": 16.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Growth planning session moved to Wednesday. Same time, bigger room."
+    },
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Noted. I will bring the capacity numbers."
+    }
+   ],
+   "title": "planning session moved"
+  },
+  {
+   "channel": "#incidents",
+   "days_ago": 2.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [
+      "search"
+     ],
+     "minutes_after": 0,
+     "text": "Investigating elevated error rate on search. Started 20 min ago, scoped to one AZ so far."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "looking too. indexer looks healthy, might be the serving path"
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Found it \u2014 bad deploy in the serving path, rolled back. Errors recovering."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "confirmed green on my end \ud83d\udc4d"
+    }
+   ],
+   "title": "search errors one AZ"
+  },
+  {
+   "channel": "#incidents",
+   "days_ago": 5.8,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [
+      "redis-cache"
+     ],
+     "minutes_after": 0,
+     "text": "redis latency elevated. investigating. 09:12"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "i see the spike too. anything i can check? \ud83d\udc40"
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "found a debug client running keys *. killed it. recovering. 10:02"
+    }
+   ],
+   "title": "redis latency bump"
+  },
+  {
+   "channel": "#incidents",
+   "days_ago": 13.0,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [
+      "identity-api"
+     ],
+     "minutes_after": 0,
+     "text": "Token refresh errors ticking up on mobile. Checking."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "I am seeing it too \u2014 mostly older app versions. Checking the version split."
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Confirmed: versions below 4.2 only. Posting a note in #team-identity with the workaround."
+    }
+   ],
+   "title": "mobile refresh errors"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 1.4,
+   "messages": [
+    {
+     "author": "lena",
+     "mentions": [
+      "dev",
+      "sofia"
+     ],
+     "minutes_after": 0,
+     "text": "Shoutout to Dev and Sofia for the fast turnaround on the provider-timeout investigation yesterday. Great teamwork."
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "aww thank you!! dev did most of the digging honestly \ud83c\udf1f"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "team effort!! thanks lena"
+    }
+   ],
+   "title": "shoutout payments duo"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 10.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [
+      "jack",
+      "chloe"
+     ],
+     "minutes_after": 0,
+     "text": "Big thanks to Jack and Chloe for the notifications lag fix before it became a real problem. This is what good on-call looks like."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "chloe did the real work, i just clicked the scale button lol"
+    },
+    {
+     "author": "chloe",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "It was a team catch. Thanks Emma."
+    }
+   ],
+   "title": "notifications catch"
+  },
+  {
+   "channel": "#oncall",
+   "days_ago": 0.8,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "oncall handoff: quiet night. one redis blip, self-resolved. pager stayed silent."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "taking over!! pager charged, coffee ready \u2615"
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "good luck. dashboard links in the pins."
+    }
+   ],
+   "title": "oncall handoff"
+  },
+  {
+   "channel": "#oncall",
+   "days_ago": 4.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Handoff notes: staging wipe Thursday, gateway canary test Friday. Pager coverage overlaps by an hour both days."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "acked. i've got friday."
+    }
+   ],
+   "title": "handoff notes"
+  }
+ ]
+}

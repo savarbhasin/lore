@@ -1,0 +1,116 @@
+{
+ "prs": {
+  "377": {
+   "body": "log_min_duration_statement set to 1s on main. was 5s, missed too much. slow query log actually useful now.",
+   "title": "postgres-main: lower slow-query threshold"
+  },
+  "378": {
+   "body": "The ledger cluster now keeps 14 days of backups instead of 7, covering the full month-end close cycle. Finance needed restores from mid-cycle twice this year and we came up empty. postgres_ledger.tf changes only the retention window. Testing: verified the retention setting in the console on staging.",
+   "title": "postgres-ledger: extend backup retention to 14 days"
+  },
+  "379": {
+   "body": "build_index now skips products with no searchable text instead of indexing empty documents that matched everything!! Empty documents were polluting results \u2014 a blank product ranked for every query. SearchService logs skipped ids at debug level, and search() behavior for real products is unchanged. Testing: indexed a catalog with blanks and confirmed they never match.",
+   "title": "search: skip empty documents in build_index"
+  },
+  "380": {
+   "body": "charge() now attaches the merchant descriptor to the provider request so statements show the store name instead of a generic string. Chargebacks from confused customers dropped noticeably after merchants enabled it!! StripeClient reads the descriptor from config, and __init__ validates it is non-empty. Testing: asserted the descriptor on outgoing requests.",
+   "title": "stripe-adapter: pass merchant descriptor in charge"
+  },
+  "381": {
+   "body": "dispatch() now strips trailing slashes before matching, so /v1/cart/ and /v1/cart hit the same route. Clients were inconsistent and the 404s confused everyone. Route definitions are unchanged. Testing: covered slash variants across all route groups.",
+   "title": "api-gateway: ignore trailing slashes in dispatch"
+  },
+  "382": {
+   "body": "build_index is now incremental \u2014 it only reindexes products changed since the last run instead of rebuilding everything nightly. the full rebuild took 3 hours and kept growing lol. search() reads the same index format so nothing downstream changes. Testing: ran incremental twice and confirmed only changed products got touched, results identical \ud83c\udf31",
+   "title": "search: incremental build_index"
+  },
+  "383": {
+   "body": "get_product now includes the vendor name in the response instead of just the vendor id. The storefront was making a second call per product to resolve names. list_products passes the name through from the same fetch. Testing: asserted no second call in the storefront tests.",
+   "title": "catalog: include vendor name in get_product"
+  },
+  "384": {
+   "body": "check_limit now uses a sliding window instead of a fixed window, so bursts at window edges no longer slip double the traffic through. dispatch() behavior is otherwise identical, RateLimited is unchanged, and reset() clears the windows. Testing: edge-burst test that failed before now passes.",
+   "title": "api-gateway: sliding-window rate limits"
+  },
+  "393": {
+   "body": "The ledger consumer group was rebalancing every few minutes because the session timeout was shorter than the longest poll interval. kafka.tf raises the session timeout above the max poll gap and the rebalances stopped overnight. No application changes. Testing: watched a full day with zero unexpected rebalances on staging.",
+   "title": "kafka: fix ledger consumer rebalancing"
+  },
+  "394": {
+   "body": "test restore from backup completed in 22 min. within the recovery target. documenting the run.",
+   "title": "postgres-ledger: backup restore drill"
+  },
+  "395": {
+   "body": "Multi-AZ enabled for the payments cluster. failover now automatic instead of manual. tested last weekend, cut over in 3 min.",
+   "title": "postgres-payments: enable Multi-AZ"
+  },
+  "396": {
+   "body": "route() now caches the provider list for 30s instead of rebuilding it per call. The rebuild did a config read every time and showed up in profiles. PaymentRouter refreshes in the background, and clear() forces a refresh for tests. Routing decisions are unchanged. Testing: asserted one config read serves repeated routes.",
+   "title": "payment-router: cache provider list in route"
+  },
+  "397": {
+   "body": "retention on the dead-letter topic extended to 30 days. support needed longer to investigate poison messages. partitions unchanged.",
+   "title": "kafka: extend dead-letter retention"
+  },
+  "398": {
+   "body": "charge() now surfaces provider error codes instead of collapsing everything into a generic failure. Debugging declined payments used to require provider-dashboard access, which most engineers don't have. StripeClient maps known codes to readable errors and __init__ loads the mapping. Unknown codes pass through with the raw code attached. Testing: covered the known-code table plus unknown passthrough.",
+   "title": "stripe-adapter: surface provider error codes in charge"
+  },
+  "399": {
+   "body": "get_product now falls back to the default locale when a translation is missing, instead of returning empty strings that rendered as blank titles. Blank titles on the storefront looked like a data outage twice this quarter. list_products inherits the fallback. Testing: requested a missing locale and confirmed the fallback content.",
+   "title": "catalog: locale fallback in get_product"
+  },
+  "400": {
+   "body": "empty cart now shows a friendly message. was a blank page lol. one-line template change.",
+   "title": "checkout: empty-cart message in place_order"
+  },
+  "401": {
+   "body": "redis slowlog now ships to central logging. was local-only, invisible during incidents. wired up.",
+   "title": "redis-cache: ship slowlog to central logging"
+  },
+  "403": {
+   "body": "The payments cluster now requires TLS for all connections, closing the gap the security review flagged. postgres_payments.tf enforces it at the parameter level and the app already connected with TLS, so no application change. Testing: verified non-TLS connections are refused on staging.",
+   "title": "postgres-payments: enforce TLS on payments cluster"
+  },
+  "404": {
+   "body": "Hello \u2014 AuthService.login was rejecting valid logins for users whose passwords contain non-ASCII characters, because the comparison normalized only one side. Both sides are now normalized the same way before comparing. This affected a small but real set of users. Testing: added non-ASCII password cases across three scripts.",
+   "title": "auth: fix non-ASCII password logins"
+  },
+  "405": {
+   "body": "login() in oauth.py now caches provider public keys for an hour instead of fetching them per login. Provider key endpoints are slow and login latency showed it. Cache invalidation on key rotation is handled by the error path. Testing: asserted one fetch serves repeated logins within the hour.",
+   "title": "auth: cache provider keys in oauth login"
+  },
+  "406": {
+   "body": "Product gains a related_ids field so the storefront can render 'you may also like' without a second service call. get_product and list_products return it, defaulting to empty. CatalogService caps the list at 10. Testing: round-trip tests plus the cap.",
+   "title": "catalog: related products in Product"
+  },
+  "407": {
+   "body": "The query-rows test now covers parameterized queries, which were previously only exercised with bare SQL. The parameterized path had a real bug last month where args were silently dropped, and the suite did not catch it. The other tests in the file are untouched. Testing: the new case fails against the old code and passes now.",
+   "title": "payments-api: cover parameterized queries in tests"
+  },
+  "408": {
+   "body": "The order events topic now uses keyed partitioning by order id so all events for one order land in order. Unkeyed partitioning split event sequences across partitions and two consumers saw them out of order. kafka.tf sets the keying, producers already sent the key. Testing: produced a burst for one order and confirmed single-partition ordering.",
+   "title": "kafka: key order events by order id"
+  },
+  "409": {
+   "body": "The payments cluster parameter group now sets statement_timeout to 30s so runaway queries get killed instead of holding resources forever. Two incidents this quarter involved a forgotten analytics query. Application behavior for normal queries is unchanged. Testing: ran a 60s query on staging and confirmed it gets terminated at 30s.",
+   "title": "postgres-payments: set statement timeout"
+  },
+  "418": {
+   "body": "encryption in transit enabled for all clients. was optional, now required. verified apps reconnect fine \ud83d\udd10",
+   "title": "postgres-main: require encrypted connections"
+  },
+  "419": {
+   "body": "capture() now validates the PSP response shape before handing it to the pool-backed writer, raising a clear malformed-response error instead of failing deep in the write path with a confusing message. get_pool, acquire, and run_query are untouched \u2014 this only hardens the boundary between the network and the database code. Testing: fed malformed responses and confirmed the early, readable error.",
+   "title": "payments-api: validate PSP responses in capture"
+  },
+  "420": {
+   "body": "dispatch() now supports weighted traffic splitting for canary routes, reading the split from route config. The growth team needed canary deploys without gateway deploys. check_limit applies per split, RateLimited is unchanged, and reset() clears the splits. Testing: split ratios verified in the route tests.",
+   "title": "api-gateway: weighted canary splits in dispatch"
+  },
+  "421": {
+   "body": "ledger backup verification job added. restores the latest backup to a scratch instance nightly and alerts on failure. backups are only useful if they restore \ud83d\udcfc",
+   "title": "postgres-ledger: nightly backup verification"
+  }
+ }
+}

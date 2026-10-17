@@ -1,0 +1,813 @@
+{
+ "conversations": [
+  {
+   "channel": "#team-checkout",
+   "days_ago": 0.4,
+   "messages": [
+    {
+     "author": "tom",
+     "mentions": [
+      "checkout"
+     ],
+     "minutes_after": 0,
+     "text": "checkout staging is throwing 503s on place order. anyone else seeing it?"
+    },
+    {
+     "author": "rohan",
+     "mentions": [
+      "services/checkout/app.py",
+      "checkout"
+     ],
+     "minutes_after": 12,
+     "text": "Looking. place_order in services/checkout/app.py hasn't changed in days \u2014 checking if it's downstream."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 18,
+     "text": "it was the staging data refresh!! expired test cards. re-seeded, green now \ud83c\udf89"
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "confirmed green. thanks"
+    }
+   ],
+   "title": "checkout staging 503s"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 1.8,
+   "messages": [
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Could someone review my cart TTL change when they get a chance? It is a small diff."
+    },
+    {
+     "author": "aisha",
+     "mentions": [
+      "kenji"
+     ],
+     "minutes_after": 45,
+     "text": "on it kenji!! reviewing now \ud83d\udc40"
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "left two comments, both tiny. otherwise looks great!!"
+    }
+   ],
+   "title": "cart TTL review request"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 3.2,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Heads up, the checkout freeze starts Thursday for the holiday push. Get your diffs in by Wednesday EOD."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "My retry-logging cleanup is already in. Nothing else planned from me."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "same. my queue is empty"
+    }
+   ],
+   "title": "holiday checkout freeze"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 6.5,
+   "messages": [
+    {
+     "author": "aisha",
+     "mentions": [
+      "services/checkout/handlers/place_order.py"
+     ],
+     "minutes_after": 0,
+     "text": "quick q!! where does the gift message actually get attached to the order? is it in handlers/place_order.py or earlier?"
+    },
+    {
+     "author": "rohan",
+     "mentions": [
+      "services/checkout/handlers/place_order.py",
+      "checkout"
+     ],
+     "minutes_after": 22,
+     "text": "It is in handlers/place_order.py \u2014 the handler reads it off the request and stamps it before calling CheckoutService.place_order. Earlier stages don't know about it."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "perfect, found it!! thank you \ud83c\udf89"
+    }
+   ],
+   "title": "where is gift message attached"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 11.0,
+   "messages": [
+    {
+     "author": "kenji",
+     "mentions": [
+      "services/pricing/discounts.py",
+      "pricing"
+     ],
+     "minutes_after": 0,
+     "text": "The loyalty discount is applying after tax on staging, but finance documented before-tax. Is discounts.py the right place to fix the order?"
+    },
+    {
+     "author": "aisha",
+     "mentions": [
+      "services/pricing/discounts.py"
+     ],
+     "minutes_after": 50,
+     "text": "yes!! discounts.py computes the order, then total_for applies tax. swap the two lines and the finance examples should pass. i can pair if you want!"
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "Thank you, that matches my reading. I will put up the diff today."
+    }
+   ],
+   "title": "loyalty discount order"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 0.6,
+   "messages": [
+    {
+     "author": "dev",
+     "mentions": [
+      "payments-api"
+     ],
+     "minutes_after": 0,
+     "text": "hey has anyone seen the payments-api latency graph today? looks spiky on my end"
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 9,
+     "text": "looking. which window?"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 14,
+     "text": "last hour, staging"
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 21,
+     "text": "that's the load test kabir is running. ignore."
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 22,
+     "text": "ohh ok thanks!"
+    },
+    {
+     "author": "kabir",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "yeah sorry thats me!! running the soak test, will post when done"
+    }
+   ],
+   "title": "payments-api latency spikes"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 2.1,
+   "messages": [
+    {
+     "author": "sofia",
+     "mentions": [
+      "services/fraud_check/model.py",
+      "fraud-check"
+     ],
+     "minutes_after": 0,
+     "text": "heads up!! i'm tuning the fraud model threshold this week, starting with a small bump. watching false positives closely \ud83d\udc40"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "how will we know if it goes too far?"
+    },
+    {
+     "author": "sofia",
+     "mentions": [
+      "services/fraud_check/model.py"
+     ],
+     "minutes_after": 42,
+     "text": "the review queue depth in model.py metrics!! if legit orders start piling up for manual review, i roll it back. i'll post daily numbers here \ud83d\udcca"
+    },
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "Thanks Sofia. Please flag in here before any second adjustment."
+    }
+   ],
+   "title": "fraud threshold tuning"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 4.7,
+   "messages": [
+    {
+     "author": "arjun",
+     "mentions": [
+      "services/payment_router/routing.py",
+      "payment-router"
+     ],
+     "minutes_after": 0,
+     "text": "psp latency from provider B is up 3x since this morning. route() is shifting traffic automatically."
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "noticed that too!! the auto-shift is doing its thing, error rate flat \ud83d\udcc9"
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "provider status page just acknowledged. waiting it out, no action needed."
+    }
+   ],
+   "title": "provider B slow"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 9.3,
+   "messages": [
+    {
+     "author": "dev",
+     "mentions": [
+      "services/stripe_adapter/client.py"
+     ],
+     "minutes_after": 0,
+     "text": "dumb q maybe: where do we set the timeout for the provider calls? is it in client.py?"
+    },
+    {
+     "author": "sofia",
+     "mentions": [
+      "services/stripe_adapter/client.py"
+     ],
+     "minutes_after": 18,
+     "text": "not dumb at all!! yes, StripeClient takes a timeout, defaults to 10s. charge() passes it through \ud83c\udf1f"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "found it, thank you!!"
+    }
+   ],
+   "title": "provider timeout location"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 0.3,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "the taco truck is back on 5th \ud83d\udc40"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 4,
+     "text": "OMG finally!! who is going at noon?? \ud83c\udf2e"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 7,
+     "text": "in. obviously."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 11,
+     "text": "me too!! haven't had those fish tacos in months \ud83d\udc1f"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "noon crew: me, ines, diego, zara. anyone else"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 22,
+     "text": "count me in"
+    }
+   ],
+   "title": "taco truck Tuesday"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 1.5,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Does anyone have a good sourdough recipe? My starter finally survived a whole month \ud83c\udf5e"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Congratulations on the starter! I use 100g starter, 375g water, 500g flour, 10g salt. Overnight proof in the fridge, bake at 230C in a dutch oven."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Thank you! Trying this on Sunday \ud83d\ude4f"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Send photos! Crumb shot or it didn't happen \ud83d\ude04"
+    }
+   ],
+   "title": "sourdough recipe"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 5.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "lunch poll: ramen vs the new salad place"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 6,
+     "text": "ramen. always ramen."
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 9,
+     "text": "ramen \ud83c\udf5c"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 12,
+     "text": "ramen it is. 12:30"
+    }
+   ],
+   "title": "lunch poll"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 0.2,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "my build just failed because of a missing semicolon in a comment. a COMMENT. i'm logging off"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 3,
+     "text": "LMAO the code has chosen violence today \ud83d\udc80"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 8,
+     "text": "felt that in my soul"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 14,
+     "text": "comments are load-bearing, everyone knows this"
+    }
+   ],
+   "title": "comment semicolon"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 1.1,
+   "messages": [
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "PSA: the office plants are thriving and it is entirely because I water them, thank you for coming to my talk \ud83e\udeb4"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "Counterpoint: the fern died twice before you adopted it."
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "the fern's past is not my responsibility"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "\ud83d\udc80\ud83d\udc80"
+    }
+   ],
+   "title": "office plants"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 2.8,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "anyone watching the game tonight?"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "yes. my team is going to disappoint me in HD"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "bold of you to expect anything else"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "score predictions? loser buys coffee"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "2-1. you're buying, jack"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "update: i am buying coffee"
+    }
+   ],
+   "title": "game night"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 7.2,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Reminder: the office will be noisy tomorrow (floor work). Headphones recommended."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "Thank you for the heads up! Working from home tomorrow \ud83c\udfe0"
+    }
+   ],
+   "title": "noisy office tomorrow"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 0.1,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [
+      "redis-cache"
+     ],
+     "minutes_after": 0,
+     "text": "redis-cache config rolling out now. expect brief blip. 14:02"
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "done. 14:27. all green"
+    }
+   ],
+   "title": "redis-cache config rollout"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 0.5,
+   "messages": [
+    {
+     "author": "kenji",
+     "mentions": [
+      "cart"
+     ],
+     "minutes_after": 0,
+     "text": "cart TTL change is live on prod. Watching the abandonment metrics for an hour."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "metrics look normal so far!! \ud83c\udf89"
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 62,
+     "text": "Agreed. Calling it good."
+    }
+   ],
+   "title": "cart TTL live"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 1.3,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [
+      "feature-flags"
+     ],
+     "minutes_after": 0,
+     "text": "feature-flags rollout support is live. is_enabled now handles percentage rollouts; growth can self-serve canary percentages."
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "This is great news, thank you Lucas! The growth team will try it on the new search ranking test."
+    }
+   ],
+   "title": "percentage rollouts live"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 0.8,
+   "messages": [
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "my cat sat on my keyboard and approved a PR by stepping on enter. she's staff engineer now \ud83d\udc08"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 5,
+     "text": "promote her immediately. what's her review style"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 9,
+     "text": "she only approves. very supportive culture \ud83d\udc85"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 18,
+     "text": "A supportive reviewer is the rarest kind \ud83d\ude2d"
+    }
+   ],
+   "title": "cat approves PR"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 3.5,
+   "messages": [
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Took the dog to the lake this weekend and he finally swam! Only took four visits and an entire bag of treats."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "That is wonderful! What kind of dog?"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "A very cautious labrador. The treats did all the negotiating \ud83d\udc15"
+    }
+   ],
+   "title": "dog swims at last"
+  },
+  {
+   "channel": "#eng",
+   "days_ago": 0.9,
+   "messages": [
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Reminder: architecture review slots for next sprint are open. Add your topic to the doc by Friday."
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Added the ledger consumer-lag runbook review."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "Added gateway canary splits."
+    }
+   ],
+   "title": "arch review slots"
+  },
+  {
+   "channel": "#eng",
+   "days_ago": 40.5,
+   "messages": [
+    {
+     "author": "kabir",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "hello!! quick intro - i'm kabir, just joined platform. really excited to be here!! if anyone has good onboarding docs pls send my way"
+    },
+    {
+     "author": "lucas",
+     "mentions": [
+      "kabir"
+     ],
+     "minutes_after": 20,
+     "text": "Welcome Kabir! The platform runbooks are the best starting point. Happy to pair on your first deploy."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 28,
+     "text": "welcome!! the snack shelf on floor 3 is the real onboarding doc \ud83c\udf6a"
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Welcome. Start with the on-call handoff notes, they cover what breaks most often."
+    },
+    {
+     "author": "kabir",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "thank you all!! reading everything now"
+    }
+   ],
+   "title": "kabir intro"
+  },
+  {
+   "channel": "#eng",
+   "days_ago": 8.0,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "The shared staging env will be wiped Sunday night. Save anything you need."
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "noted, moving my test fixtures to the persistent env"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Thank you for the warning!"
+    }
+   ],
+   "title": "staging wipe Sunday"
+  },
+  {
+   "channel": "#parties",
+   "days_ago": 1.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "We're planning a small team dinner next Friday to celebrate the quarter! Please RSVP in the thread \ud83e\udd73"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "in!"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "In, plus one if that's okay!"
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Plus-ones welcome!"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "in. will bring my appetite"
+    },
+    {
+     "author": "chloe",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "Count me in as well."
+    }
+   ],
+   "title": "quarter dinner Friday"
+  },
+  {
+   "channel": "#parties",
+   "days_ago": 6.0,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "who's in for drinks friday"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "me!! \ud83c\udf79"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "in!!"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "can't, family thing. next time"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "the usual place, 6pm"
+    }
+   ],
+   "title": "drinks friday"
+  }
+ ]
+}

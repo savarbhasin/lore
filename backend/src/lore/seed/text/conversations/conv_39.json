@@ -1,0 +1,319 @@
+{
+ "conversations": [
+  {
+   "channel": "#team-checkout",
+   "days_ago": 12.0,
+   "messages": [
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Freeze prep: validation suite green, event docs merged, metrics reviewed."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "staging calm. ready."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "storefront ready!! \ud83c\udf89"
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "All locales verified. Ready."
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "Freeze starts Thursday 9am. Well done all."
+    }
+   ],
+   "title": "freeze prep"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 10.0,
+   "messages": [
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Fraud review staffing for the holidays: coverage complete!!"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "i'm on the early shift. queue duty!!"
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "late shift. quiet holidays hopefully."
+    },
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Thanks all. Coverage looks complete."
+    }
+   ],
+   "title": "holiday coverage"
+  },
+  {
+   "channel": "#team-ledger",
+   "days_ago": 10.0,
+   "messages": [
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Holiday close support: ledger covered through the freeze."
+    },
+    {
+     "author": "samir",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "Relay watched. Happy to cover."
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Dashboard duty!! \ud83d\udcca"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "report queries ready for year-end!!"
+    }
+   ],
+   "title": "close support"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 10.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Freeze support roster is set. All clusters watched."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "roster set. pager ready."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "snacks ALSO set. priorities \ud83c\udf7f"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Watched and snacked. The platform way."
+    }
+   ],
+   "title": "freeze roster"
+  },
+  {
+   "channel": "#team-growth",
+   "days_ago": 10.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Holiday coverage: ranking test stays at 10%, alerts armed."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "covering catalog. quiet holidays please"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "covering search!!"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "indexer babysitting duty. riveting"
+    },
+    {
+     "author": "chloe",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "Consumers watched. Calm holidays ahead."
+    }
+   ],
+   "title": "growth coverage"
+  },
+  {
+   "channel": "#team-identity",
+   "days_ago": 10.0,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Holiday coverage set. Streak protection duty."
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "covering oauth. streak lives"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Covering mobile!! \ud83c\udf1f"
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Covering docs + diagrams!"
+    }
+   ],
+   "title": "streak protection"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 12.0,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "holiday meme stash: fully stocked. deploying daily"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "meme advent calendar. elite format \ud83d\udc80"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "day 1: config button in a santa hat"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "day 2: pipeline with fairy lights"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Day 3: 4-inch taller elf. Me. I am the elf."
+    }
+   ],
+   "title": "meme advent"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 12.0,
+   "messages": [
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Holiday cookie exchange signup!! Bring 2 dozen, take 2 dozen \ud83c\udf6a"
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "IN!! cinnamon rolls count as cookies (they do) \ud83d\udc9b"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "in. bringing the chestnut things"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "In!! Trying shortbread!! \ud83d\ude4f"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "in. store-bought but fancy (don't tell)"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "Fancy store-bought is valid!! All cookies welcome \ud83c\udf6a"
+    }
+   ],
+   "title": "cookie exchange"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 12.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Secret santa signup closes Friday!! 20 people in already \ud83c\udf81"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "IN!! my giftee is getting snacks (it is me, I am giftee)"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "in. my gift will be a meme (framed)"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "In!! Pottery for my giftee!! \ud83c\udffa"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "in. frisbee. obviously"
+    }
+   ],
+   "title": "secret santa"
+  }
+ ]
+}

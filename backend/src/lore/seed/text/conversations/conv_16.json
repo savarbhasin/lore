@@ -1,0 +1,667 @@
+{
+ "conversations": [
+  {
+   "channel": "#incidents",
+   "days_ago": 32.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [
+      "checkout"
+     ],
+     "minutes_after": 0,
+     "text": "Checkout errors spiking. Started 5 min ago. All hands thread here."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 5,
+     "text": "looking at place_order"
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 8,
+     "text": "staging or prod?"
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "Prod. Error rate 4% and climbing."
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "payments side looks clean from here."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "address validation failing for all non-US addresses. the locale data deploy?"
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "Yes \u2014 locale deploy 20 min ago. Rolling back."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "errors falling."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "confirmed green on the confirmation pages!!"
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Baseline restored. Culprit: locale deploy broke non-US validation. Follow-up tomorrow."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Adding a non-US validation case to the suite tonight."
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "Thanks everyone. Fast catch."
+    }
+   ],
+   "title": "checkout errors spike"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 22.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Office Olympics signups! Events: chair race, paperclip chain, speed typing \ud83c\udfc6"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "speed typing. obviously"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "chair race!! \ud83e\ude91"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "all events. all of them"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "paperclip chain. my tiny hands were made for this"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "judging. someone has to be impartial"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "speed typing + chair race!!"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "paperclip chain dark horse here"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "Signing up for everything except chair race (dignity)"
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 80,
+     "text": "16 signed up! Friday 4pm. Losers bring snacks!"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 200,
+     "text": "update: i won typing. diego won everything else. as prophesied"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 210,
+     "text": "olympic champion. please update my title"
+    }
+   ],
+   "title": "office olympics"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 33.0,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "game tonight. score predictions. loser buys coffee"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "3-1. easy"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "1-1. boring but safe"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "2-0! Optimistic!"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "halftime: 1-0. jack looking smart"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 130,
+     "text": "plenty of game left"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 200,
+     "text": "FULL TIME 2-1. fatima was closest!!"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 210,
+     "text": "COFFEE!! \u2615\ud83c\udf89"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 220,
+     "text": "coffees on me tomorrow. fatima gets the fancy one"
+    }
+   ],
+   "title": "game predictions"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 30.0,
+   "messages": [
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Fraud model retrain is done. New version in staging, watching the review queue."
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "what changed in this version?"
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "fresh training data + two new features. threshold unchanged!!"
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "staging error rate?"
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "flat vs prod. promoting tomorrow if it holds \ud83c\udf1f"
+    },
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 80,
+     "text": "Thanks. Post the staging comparison before promoting."
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 200,
+     "text": "held overnight. promoting now \ud83d\ude80"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 220,
+     "text": "watching the queue with you \ud83d\udc40"
+    }
+   ],
+   "title": "model retrain"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 26.0,
+   "messages": [
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "rank the office snacks. definitive. go."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "1. whatever sofia bakes 2. everything else"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "1. lemon cookies 2. trail mix 3. the crackers that taste like nothing but i eat anyway"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "the crackers have no business being that addictive"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "1. dates 2. roasted chickpeas 3. lemon cookies"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "the chocolate stash in the second drawer. you all know the one \ud83c\udf6b"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "THE SECOND DRAWER. a classic"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "Dried mango supremacy \ud83e\udd6d"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "final ranking: sofia's baking, then everything else. democracy has spoken"
+    }
+   ],
+   "title": "snack ranking"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 28.0,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [
+      "kafka"
+     ],
+     "minutes_after": 0,
+     "text": "kafka partition move thursday. narrated, all welcome. 10am."
+    },
+    {
+     "author": "kabir",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "i'll be there!!"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "I will narrate. Moves are calm when done right."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "bringing snacks \ud83c\udf7f"
+    },
+    {
+     "author": "kabir",
+     "mentions": [],
+     "minutes_after": 200,
+     "text": "that was so cool. partitions just... glided"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 210,
+     "text": "Glided is the goal. Well watched."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 220,
+     "text": "no lag spike. clean move."
+    }
+   ],
+   "title": "partition move"
+  },
+  {
+   "channel": "#team-identity",
+   "days_ago": 50.0,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Token revocation list is now replicated in realtime. Revoked tokens die everywhere at once."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "The demo for this will be great! No more revocation lag \ud83c\udf1f"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "mobile edge cases covered?"
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Yes. Offline grace period unchanged."
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "Adding this to the lunch-and-learn follow-up notes!"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "The diagrams will love this \ud83c\udf89"
+    }
+   ],
+   "title": "revocation realtime"
+  },
+  {
+   "channel": "#team-ledger",
+   "days_ago": 35.0,
+   "messages": [
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "standup: report queries fixed, helping with dashboard polish"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "standup: dashboard polish + audit screenshots!!"
+    },
+    {
+     "author": "samir",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "standup: approval metrics review, then the relay docs"
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "standup: audit packet assembly. thanks all for the inputs."
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "quick q: where do the dashboard screenshots go?"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "in the audit folder!! i'll send the link \ud83d\ude0a"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 80,
+     "text": "got it, uploading now"
+    }
+   ],
+   "title": "ledger async standup"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 45.0,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "merge conflict setlist vote! scales, faster scales, the song, or... a second song??"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "TWO SONGS. we are ready"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "we are NOT ready"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "the people deserve two songs \ud83c\udfb8"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Democracy wins: two songs. Practice Wednesday \ud83c\udfb9"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "wednesday practice: we learned half of song two. progress"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "half a song is still a song (partially)"
+    }
+   ],
+   "title": "setlist vote"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 40.0,
+   "messages": [
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Parrot vocabulary update: deploy failed, LGTM, and now... 'rollback' \ud83e\udd9c"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "he's learning incident response in order"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "next: 'blameless retro'"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "He said 'snack' yesterday. Priorities intact."
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "A parrot with correct priorities \ud83e\udd9c"
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "teach him 'quiet handoff'."
+    }
+   ],
+   "title": "parrot vocab"
+  },
+  {
+   "channel": "#eng",
+   "days_ago": 38.0,
+   "messages": [
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Dashboard index is published! All team dashboards in one page."
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "this is SO useful. thank you!!"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "bookmarked. no more asking where graphs live"
+    },
+    {
+     "author": "kabir",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "as a new hire this is gold. thank you!!"
+    },
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "Glad it helps. Ping me with missing dashboards."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 80,
+     "text": "the food channel dashboard when \ud83d\udc40"
+    },
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 95,
+     "text": "Out of scope for the index. Nice try."
+    }
+   ],
+   "title": "dashboard index"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 55.0,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [
+      "rohan",
+      "tom",
+      "aisha",
+      "kenji"
+     ],
+     "minutes_after": 0,
+     "text": "Checkout freeze survived with zero hotfixes. The whole team was disciplined. Thank you all!"
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "Boring freeze. Best freeze."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "agreed. boring is the goal."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "zero hotfixes!!! we did it!! \ud83c\udf89"
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Thank you all. The prep work paid off."
+    }
+   ],
+   "title": "freeze survived"
+  }
+ ]
+}

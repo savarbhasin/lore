@@ -1,0 +1,400 @@
+{
+ "conversations": [
+  {
+   "channel": "#frontend",
+   "days_ago": 28.0,
+   "messages": [
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Skeleton shimmer is now a shared component!! All pages use it \ud83c\udf89"
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "One shimmer to rule them all. Timing consistent everywhere."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "good. consistent shimmer."
+    }
+   ],
+   "title": "shared shimmer"
+  },
+  {
+   "channel": "#frontend",
+   "days_ago": 55.0,
+   "messages": [
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Mobile checkout audit: three papercuts found, all fixed this week."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "mobile feels SO much better!! \ud83c\udf89"
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "verified on device. good."
+    }
+   ],
+   "title": "mobile audit"
+  },
+  {
+   "channel": "#frontend",
+   "days_ago": 90.0,
+   "messages": [
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "slow-3G profile is now part of CI. no more surprises."
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "The spinner timing was caught by it already. Worth it."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "CI catching UX bugs!! living the dream \ud83c\udf89"
+    }
+   ],
+   "title": "slow-3G in CI"
+  },
+  {
+   "channel": "#frontend",
+   "days_ago": 150.0,
+   "messages": [
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Year-end frontend: every page polished, every state handled!!"
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "A lovely storefront year."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "polished. done."
+    }
+   ],
+   "title": "frontend year"
+  },
+  {
+   "channel": "#eng-leads",
+   "days_ago": 100.0,
+   "messages": [
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Leads retro: what worked this year? Async standups, 48h writeups, monthly drills."
+    },
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "Plus the dashboard index. Discovered work, shared."
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Plus freeze discipline. Zero hotfixes."
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Plus self-serve canaries. Growth unblocked!"
+    },
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "Good list. Continuing all of it next year."
+    }
+   ],
+   "title": "leads retro"
+  },
+  {
+   "channel": "#eng-leads",
+   "days_ago": 175.0,
+   "messages": [
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Year-end leads: thank you all. Calm teams, clean audits, green quarters."
+    },
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "Thank you, Ananya. Good year."
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Best leads group. Happy new year!"
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Happy new year!! \ud83d\udc9a"
+    }
+   ],
+   "title": "leads year-end"
+  },
+  {
+   "channel": "#parties",
+   "days_ago": 140.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "New year party planning: venue booked, theme poll open!!"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "voting pajamas again. it was perfect"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "voting formal. my suit demands a rematch"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "COZY FORMAL. the compromise that pleased everyone!!"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "cozy formal forever. motion passed"
+    }
+   ],
+   "title": "party poll"
+  },
+  {
+   "channel": "#oncall",
+   "days_ago": 45.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Handoff: ranking test at 10%, all alarms normal. Watch the ledger lag baseline."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "acked. watching baselines."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "baselines memorized. anomalies fear me \ud83d\udcdf"
+    }
+   ],
+   "title": "baseline watch"
+  },
+  {
+   "channel": "#oncall",
+   "days_ago": 90.0,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "handoff: sale prep week. volume alarms normal, real pages page."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "lovingly ignoring volume. respecting real pages \ud83d\udcdf"
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "The distinction, as always."
+    }
+   ],
+   "title": "prep week"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 135.0,
+   "messages": [
+    {
+     "author": "lena",
+     "mentions": [
+      "ines"
+     ],
+     "minutes_after": 0,
+     "text": "Ines's audit screenshots made the packet sing. Beautiful work."
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "Thank you!! Dashboard art is my calling \ud83d\udcca"
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "The packet passed review with zero comments. Rare."
+    }
+   ],
+   "title": "packet art"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 160.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [
+      "hana"
+     ],
+     "minutes_after": 0,
+     "text": "Hana co-presented to a packed room! Natural teacher, standing ovation (mine)."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "Thank you Emma!! Best audience!! \ud83c\udf1f"
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Co-presenting was the highlight of my year!!"
+    }
+   ],
+   "title": "standing ovation"
+  },
+  {
+   "channel": "#parties",
+   "days_ago": 160.0,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "new year party: CONFIRMED cozy formal. suit stays home (again)"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "sweaters WIN. democracy works"
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Cozy formal it is! See you all there!!"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "bringing the frisbee. indoor edition"
+    }
+   ],
+   "title": "cozy confirmed"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 168.0,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "New year resolution: learn the HALF song properly. It deserves better \ud83c\udfb9"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "the half song deserves a full effort"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "half song, full heart"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "printing that on a shirt \ud83c\udfb8"
+    }
+   ],
+   "title": "half heart"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 168.0,
+   "messages": [
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "goldfish new year resolution: continue being round. achievable \ud83d\udc20"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "achievable AND achieved. prophet fish"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Round is a lifestyle. Respect"
+    }
+   ],
+   "title": "round goals"
+  }
+ ]
+}

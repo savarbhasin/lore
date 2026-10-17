@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@theme {
+  --color-canvas: #09090b;
+  --color-surface: #111113;
+  --color-elevated: #18181b;
+  --color-overlay: #1f1f23;
+  --color-line: rgb(255 255 255 / 0.07);
+  --color-line-strong: rgb(255 255 255 / 0.12);
+  --color-accent: #fbbf24;
+
+  --animate-fade-in: fade-in 0.25s ease-out both;
+  --animate-pop: pop 0.16s ease-out both;
+  --animate-slide-in: slide-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-shimmer: shimmer 2.2s linear infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: translateY(-4px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: var(--color-canvas);
+}
+
+body {
+  /* Inter alternates: open 4/6/9 (cv02–04) and a serifed capital I so it never reads as l (cv08). */
+  font-feature-settings: "cv02", "cv03", "cv04", "cv08";
+  letter-spacing: -0.006em;
+  text-rendering: optimizeLegibility;
+}
+
+code,
+kbd,
+pre,
+.font-mono {
+  font-feature-settings: "calt" 0, "zero";
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.022em;
+}
+
+::selection {
+  background: rgb(251 191 36 / 0.25);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.1) transparent;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #71717a 0%, #71717a 40%, #e4e4e7 50%, #71717a 60%, #71717a 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Answer prose */
+.prose-lore {
+  line-height: 1.7;
+}
+.prose-lore > :first-child {
+  margin-top: 0;
+}
+.prose-lore > :last-child {
+  margin-bottom: 0;
+}
+.prose-lore p {
+  margin: 0.65rem 0;
+}
+.prose-lore ul,
+.prose-lore ol {
+  margin: 0.6rem 0;
+  padding-left: 1.25rem;
+}
+.prose-lore ul {
+  list-style: disc;
+}
+.prose-lore ol {
+  list-style: decimal;
+}
+.prose-lore li {
+  margin: 0.3rem 0;
+  padding-left: 0.15rem;
+}
+.prose-lore li::marker {
+  color: #52525b;
+}
+.prose-lore strong {
+  color: #fafafa;
+  font-weight: 600;
+}
+.prose-lore code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.06);
+  padding: 0.05rem 0.3rem;
+  border-radius: 5px;
+}
+.prose-lore pre {
+  margin: 0.8rem 0;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  border-radius: 10px;
+  background: #0c0c0e;
+  border: 1px solid rgb(255 255 255 / 0.07);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+.prose-lore pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+}
+.prose-lore h1,
+.prose-lore h2,
+.prose-lore h3,
+.prose-lore h4 {
+  font-weight: 600;
+  color: #fafafa;
+  margin: 1.2rem 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+.prose-lore h1 {
+  font-size: 1.2rem;
+}
+.prose-lore h2 {
+  font-size: 1.08rem;
+}
+.prose-lore h3,
+.prose-lore h4 {
+  font-size: 1rem;
+}
+.prose-lore blockquote {
+  margin: 0.8rem 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid rgb(255 255 255 / 0.12);
+  color: #a1a1aa;
+}
+.prose-lore hr {
+  margin: 1.2rem 0;
+  border-color: rgb(255 255 255 / 0.08);
+}
+.prose-lore table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0.8rem 0;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.prose-lore th,
+.prose-lore td {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  text-align: left;
+}
+.prose-lore th {
+  background: rgb(255 255 255 / 0.03);
+  color: #e4e4e7;
+  font-weight: 500;
+}

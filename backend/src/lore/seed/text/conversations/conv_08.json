@@ -1,0 +1,715 @@
+{
+ "conversations": [
+  {
+   "channel": "#team-growth",
+   "days_ago": 20.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [
+      "services/catalog/app.py",
+      "catalog"
+     ],
+     "minutes_after": 0,
+     "text": "Vendor names are inline in get_product now. One less call per product page."
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Page load improved noticeably. Nice win."
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "The merch team noticed too. Thank you!"
+    }
+   ],
+   "title": "vendor names inline"
+  },
+  {
+   "channel": "#team-growth",
+   "days_ago": 68.0,
+   "messages": [
+    {
+     "author": "fatima",
+     "mentions": [
+      "services/search/app.py",
+      "search"
+     ],
+     "minutes_after": 0,
+     "text": "Empty search documents were matching every query \u2014 blank products ranked for everything. build_index skips them now."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "oh THAT's why weird blanks showed up in results lol. nice catch"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Skipped ids log at debug level if anyone wants to audit."
+    }
+   ],
+   "title": "empty docs fix"
+  },
+  {
+   "channel": "#team-identity",
+   "days_ago": 28.0,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [
+      "services/identity_api/tokens.py",
+      "identity-api"
+     ],
+     "minutes_after": 0,
+     "text": "Tokens now carry the client version, so version-specific validation works. Old app versions send slightly different payloads."
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Tokens without a version behave as before. Good backwards compat."
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "This will make my lunch-and-learn diagrams much cleaner!"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "I will add it to your slides \ud83c\udf1f"
+    }
+   ],
+   "title": "token client versions"
+  },
+  {
+   "channel": "#team-identity",
+   "days_ago": 64.0,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [
+      "auth"
+     ],
+     "minutes_after": 0,
+     "text": "remember-me is live. checked-box sessions last longer now."
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "Support tickets on early logouts should drop."
+    }
+   ],
+   "title": "remember-me live"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 31.0,
+   "messages": [
+    {
+     "author": "tom",
+     "mentions": [
+      "services/checkout/app.py",
+      "checkout"
+     ],
+     "minutes_after": 0,
+     "text": "with_retry metrics are live. per-attempt counts with function labels."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "The dashboard finally has real data instead of estimates. Great."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "ooh the new panels look great!! \ud83d\udcca"
+    }
+   ],
+   "title": "retry metrics live"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 72.0,
+   "messages": [
+    {
+     "author": "rohan",
+     "mentions": [
+      "services/checkout/handlers/place_order.py",
+      "checkout"
+     ],
+     "minutes_after": 0,
+     "text": "Gift confirmation tests now cover the gift-message variant. It was the only confirmation shape without a test."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "no prod change?"
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "None. Tests only."
+    }
+   ],
+   "title": "gift test coverage"
+  },
+  {
+   "channel": "#team-ledger",
+   "days_ago": 38.0,
+   "messages": [
+    {
+     "author": "ines",
+     "mentions": [
+      "services/refunds/workflow.py",
+      "refunds"
+     ],
+     "minutes_after": 0,
+     "text": "Every refund transition now writes an audit record!! actor, timestamp, the works \ud83d\udcdd"
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Good. Disputes about approvals end here."
+    },
+    {
+     "author": "samir",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Walked a full lifecycle in staging. Trail is complete."
+    }
+   ],
+   "title": "refund audit trail"
+  },
+  {
+   "channel": "#team-ledger",
+   "days_ago": 80.0,
+   "messages": [
+    {
+     "author": "raj",
+     "mentions": [
+      "services/ledger/outbox.py",
+      "ledger"
+     ],
+     "minutes_after": 0,
+     "text": "question: why do outbox rows have a sequence number? what reads it?"
+    },
+    {
+     "author": "samir",
+     "mentions": [
+      "services/ledger/outbox.py"
+     ],
+     "minutes_after": 30,
+     "text": "relay() uses it to publish in entry order. Without it, restarts could publish B before A."
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "ahh ordering guarantee. got it, thanks!"
+    }
+   ],
+   "title": "outbox sequence why"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 27.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [
+      "services/api_gateway/routes.py",
+      "api-gateway"
+     ],
+     "minutes_after": 0,
+     "text": "Gateway canary splits are live \u2014 weighted traffic splitting per route config, no gateway deploy needed."
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Growth will use this for the ranking test. Thank you!"
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "Rate limits apply per split. Verified in the route tests."
+    }
+   ],
+   "title": "canary splits live"
+  },
+  {
+   "channel": "#team-platform",
+   "days_ago": 48.0,
+   "messages": [
+    {
+     "author": "zara",
+     "mentions": [
+      "redis-cache"
+     ],
+     "minutes_after": 0,
+     "text": "memory alarm moved to 80%!! was 95%, way too late to react. already paged twice, both real \ud83d\udcdf"
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "both real per the logs. good threshold."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Agreed. 95% gave no reaction time."
+    }
+   ],
+   "title": "memory alarm threshold"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 34.0,
+   "messages": [
+    {
+     "author": "arjun",
+     "mentions": [
+      "services/payment_router/routing.py",
+      "payment-router"
+     ],
+     "minutes_after": 0,
+     "text": "canary weights are in. 1% soak traffic for new providers without a deploy."
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "how does traffic get marked canary?"
+    },
+    {
+     "author": "arjun",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "cookie. QA sets it, those requests pin to the canary entry."
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "elegant. thanks!"
+    }
+   ],
+   "title": "canary weights"
+  },
+  {
+   "channel": "#team-payments",
+   "days_ago": 60.0,
+   "messages": [
+    {
+     "author": "sofia",
+     "mentions": [
+      "services/stripe_adapter/client.py",
+      "stripe-adapter"
+     ],
+     "minutes_after": 0,
+     "text": "provider error codes now surface instead of collapsing into generic failure!! debugging declines doesn't need dashboard access anymore \ud83c\udf89"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "this is going to save so much time. the generic errors were useless"
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "right?? unknown codes pass through with the raw code attached \ud83c\udf1f"
+    }
+   ],
+   "title": "error codes surface"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 27.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "my fantasy team is undefeated. just documenting this before sunday ruins it"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "screenshotting for the history books"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "enjoy it while it lasts"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 200,
+     "text": "update: sunday ruined it"
+    }
+   ],
+   "title": "fantasy glory"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 52.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "My standing desk finally arrived. I am now 4 inches taller in meetings."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "power move \ud83d\udcaa"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "does it go up AND down. asking the real questions"
+    }
+   ],
+   "title": "standing desk"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 88.0,
+   "messages": [
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "I have read 40 books this year. Recommendations available upon request."
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Requesting! Mystery preferably \ud83d\udcda"
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "List incoming. The third one has the best ending."
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Requesting sci-fi, please!"
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "Also incoming. You two are why the library shelf empties."
+    }
+   ],
+   "title": "book recommendations"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 22.0,
+   "messages": [
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Tried the new udon place. The noodles are hand-pulled. Worth the walk."
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "hand pulled?? going tomorrow"
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "lunch crew field trip!! \ud83c\udf5c"
+    }
+   ],
+   "title": "udon place"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 49.0,
+   "messages": [
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "sunday bake: olive oil cake with citrus!! bringing slices monday \ud83c\udf70"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "monday just got 10x better"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "reserving three slices in advance"
+    },
+    {
+     "author": "sofia",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "three?! bold. noted \ud83d\ude04"
+    }
+   ],
+   "title": "olive oil cake"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 38.0,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "My piano teacher says my scales are 'surprisingly even'. High praise \ud83c\udfb9"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "merge conflict's keyboardist is leveling up"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Our first performance will still be scales. Very fast scales \ud83d\udc9b"
+    }
+   ],
+   "title": "piano progress"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 95.0,
+   "messages": [
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "finally tried the climbing gym!! my arms are noodles now"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "first session always destroys you. it gets better. mostly"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Welcome to the noodle-arms club \ud83e\uddd7"
+    }
+   ],
+   "title": "climbing gym"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 34.0,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [
+      "postgres-payments"
+     ],
+     "minutes_after": 0,
+     "text": "TLS enforcement going on tonight. app already connects with TLS, no change expected."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 180,
+     "text": "done. non-TLS refused, apps fine."
+    }
+   ],
+   "title": "TLS enforcement"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 58.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [
+      "kafka"
+     ],
+     "minutes_after": 0,
+     "text": "Dead-letter retention going to 30 days. Support needs longer for poison-message investigation."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Partitions unchanged. Applied."
+    }
+   ],
+   "title": "dead-letter retention"
+  },
+  {
+   "channel": "#eng",
+   "days_ago": 44.0,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Staging identity data refresh is done. Test accounts are back to known state."
+    },
+    {
+     "author": "julia",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "Thank you! My test fixtures make sense again."
+    }
+   ],
+   "title": "staging identity refresh"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 85.0,
+   "messages": [
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "merge conflict first practice: we survived 40 minutes. the neighbors survived too \ud83c\udfb8"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "40 minutes of scales. legendary"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "VERY fast scales though \ud83c\udfb9"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "next: actual songs??"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "let's not get ahead of ourselves"
+    }
+   ],
+   "title": "band practice"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 70.0,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "new keyboard arrived. cat has already claimed the box."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "the box was the real purchase \ud83d\udce6"
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "she agrees."
+    }
+   ],
+   "title": "cat box claim"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 62.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [
+      "fatima",
+      "diego"
+     ],
+     "minutes_after": 0,
+     "text": "Fatima and Diego's catalog improvements cut product page load noticeably. Merch team sent love."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "fatima did the hard parts!"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Team effort! The review summaries were Diego's idea."
+    }
+   ],
+   "title": "catalog kudos"
+  },
+  {
+   "channel": "#oncall",
+   "days_ago": 37.0,
+   "messages": [
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "handoff: quiet week. vacuum tuning done, logs quiet."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "taking over!! have a quiet one yourself \u2615"
+    }
+   ],
+   "title": "quiet week handoff"
+  }
+ ]
+}

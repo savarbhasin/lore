@@ -1,0 +1,123 @@
+{
+ "prs": {
+  "134": {
+   "body": "postgres_ledger.tf now turns on automated backups with a 7-day retention window and a 3am backup slot, plus deletion protection on the ledger cluster. Until now a bad apply could wipe the ledger database with no way back, which is not a position we want to be in before audit season. The backup window sits outside the nightly reconciliation job so the two never overlap. Testing: ran plan against staging and confirmed the backup window shows up in the console; restore test is tracked separately.",
+   "title": "postgres-ledger: enable automated backups and deletion protection"
+  },
+  "135": {
+   "body": "line_total used to silently treat a missing quantity as zero, so a malformed basket item priced out at $0.00 instead of failing loudly. It now raises a ValueError naming the offending SKU, and total_for lets it bubble up instead of swallowing it. No change for well-formed baskets. Testing: added cases for missing and negative quantities.",
+   "title": "pricing: reject malformed basket items in line_total"
+  },
+  "136": {
+   "body": "FraudService.score_order now emits a timing span around the model call so we can finally see scoring latency broken out in traces! is_fraudulent passes the order id through as the span attribute so slow traces are searchable. No scoring logic changed at all, this is observability only. Testing: ran the app locally and confirmed spans show up with the right attributes. \ud83c\udf89",
+   "title": "fraud-check: add tracing spans to score_order"
+  },
+  "137": {
+   "body": "get_product was doing a fresh read on every call, including the hot loop in list_products that fetches each product one by one. CatalogService now keeps a small in-process cache of recently fetched products with a 60s TTL, and list_products reuses it. Stale reads are bounded by the TTL, which is fine for catalog data. Testing: added a test that asserts the second get_product for the same id does not hit the store.",
+   "title": "catalog: cache get_product results in CatalogService"
+  },
+  "138": {
+   "body": "storage autoscaling kicks in at 85% instead of 90. took 5 min. alarms updated.",
+   "title": "postgres-main: lower storage autoscaling threshold"
+  },
+  "139": {
+   "body": "The ledger cluster was running without enhanced monitoring, so per-query visibility was limited to what we scraped ourselves. postgres_ledger.tf now enables enhanced monitoring at a 60s interval and wires the existing log group for slow statements. This gives us query-level insight without touching the application. Testing: applied to staging; metrics visible in the dashboard within the hour.",
+   "title": "postgres-ledger: enable enhanced monitoring on the ledger cluster"
+  },
+  "140": {
+   "body": "Session listing capped at 50. Large orgs truncated silently. Paginate now.",
+   "title": "identity-api: paginate session listing in IdentityService"
+  },
+  "141": {
+   "body": "new_cart now stamps every cart with a created_at timestamp at creation time. The abandoned-cart cleanup job was guessing age from the first line item, which broke for carts that never got an item added. get_cart returns the stamp unchanged. Small change, removes a whole class of confused support tickets. Testing: covered in the existing cart test suite.",
+   "title": "cart: stamp created_at in new_cart"
+  },
+  "174": {
+   "body": "issue_refresh_token and verify_refresh_token now reject tokens signed with the legacy HS256 key and log a warning naming the key id. The old signing key has been out of rotation for months but the code still accepted it, which the audit flagged. verify_refresh_token returns the same invalid-token error as before so clients see no behavior change, just the warning in our logs. IdentityService passes the key id through unchanged.",
+   "title": "identity-api: reject legacy signing key in verify_refresh_token"
+  },
+  "175": {
+   "body": "login() in oauth.py now includes the provider name in every error it raises, instead of a bare 'authentication failed'. We support three providers and the on-call could never tell which one broke without digging through request logs. The error message now reads like 'authentication failed (provider: google)'. No change to the success path. Testing: exercised all three providers against staging.",
+   "title": "auth: include provider name in oauth login errors"
+  },
+  "176": {
+   "body": "The order summary section now shows a proper empty state when the cart has no shippable items, instead of rendering the skeleton forever. render_checkout branches on the item list before touching any pricing widgets, so the page settles immediately. Wording matches the design doc. Testing: verified on staging with an empty cart and a digital-only cart.",
+   "title": "web-frontend: add empty state to render_checkout"
+  },
+  "177": {
+   "body": "The outbox relay tests were order-dependent: test_post_entry_publishes_to_bus passed alone but failed after test_relay_dedupes_on_entry_id because the fake bus kept entries between tests. setup_function now resets the bus before each test, and sample_entry uses unique entry ids so tests cannot collide even if run in random order. No production code changed. Testing: ran the file 20 times with random ordering, all green.",
+   "title": "ledger: isolate outbox tests with per-test bus reset"
+  },
+  "178": {
+   "body": "Product gains an optional image_urls field (max 8 URLs, validated at write time). get_product and list_products return the new field, and existing products without images come back with an empty list so no client breaks. CatalogService validates URL shape before persisting. Testing: added model validation tests plus a round-trip through get_product.",
+   "title": "catalog: add image_urls to Product"
+  },
+  "179": {
+   "body": "list_products now accepts an optional sort parameter (name, price_asc, price_desc) instead of always returning insertion order. The storefront team has been sorting client-side, which breaks pagination. Sorting happens in the query so pages stay consistent. Default order is unchanged. Testing: added sort coverage plus a pagination consistency test.",
+   "title": "catalog: add sorting to list_products"
+  },
+  "180": {
+   "body": "ok so the model was reloading from disk on every call when _fresh returned false, which made scoring super slow in staging lol. score_order now keeps the loaded model in memory and only reloads when _fresh says the file changed. is_fraudulent doesn't change at all. staging p99 for scoring went from like 900ms to 60ms!! testing: watched the reload counter stay at 1 across 500 test orders",
+   "title": "fraud-check: cache the loaded model in score_order"
+  },
+  "181": {
+   "body": "post_entry now validates that debits equal credits before writing anything, and raises with the entry id and the imbalance amount when they don't. Previously an unbalanced entry went straight to the ledger and we found out from reconciliation the next morning. LedgerService callers see a clear error at write time instead. Testing: added unbalanced-entry cases to the ledger suite.",
+   "title": "ledger: validate balanced entries in post_entry"
+  },
+  "206": {
+   "body": "turned on storage encryption. was off since the cluster was created. no downtime, applied clean.",
+   "title": "postgres-main: enable storage encryption"
+  },
+  "207": {
+   "body": "Hi all \u2014 issue_refresh_token was issuing tokens with a 30-day lifetime for every client, including the mobile app where our policy says 7 days. It now reads the per-client lifetime from the client registry, falling back to the previous default for clients without an entry. verify_refresh_token is untouched. IdentityService logs the effective lifetime at issue time so support can see what was granted. Testing: covered registry-present, registry-missing, and malformed-entry cases.",
+   "title": "identity-api: per-client refresh token lifetimes"
+  },
+  "208": {
+   "body": "kafka topic retention to 7 days, was 3. support needed longer replay window. partitions unchanged \ud83c\udf31",
+   "title": "kafka: extend topic retention to 7 days"
+  },
+  "209": {
+   "body": "The checkout page was missing a loading state between placing the order and the confirmation, so impatient shoppers tapped the button twice and got confused. render_checkout now shows a spinner with the order reference as soon as the request is in flight, and WebFrontend disables the button until the response lands. No logic changes. Testing: clicked through on staging, including the slow-3G profile.",
+   "title": "web-frontend: add placing-order loading state"
+  },
+  "210": {
+   "body": "The order confirmation page showed prices without currency symbols, which confused our non-USD shoppers!! render_checkout now formats every amount with its currency code, and WebFrontend passes the shopper locale through so symbols render correctly. Fallback is USD formatting when no locale is set. Testing: checked USD, EUR, and JPY on staging \ud83c\udf89",
+   "title": "web-frontend: format currency on the confirmation page"
+  },
+  "211": {
+   "body": "StripeClient.charge now logs the PSP request id at debug level on every call, which we never captured before. When support asks about a specific payment we currently have nothing to grep for on our side. The request id is also attached to the raised exception so error trackers group by it. __init__ takes an optional logger, defaulting to the module logger. Testing: asserted the request id appears in both the log record and the exception.",
+   "title": "stripe-adapter: log PSP request ids in charge"
+  },
+  "212": {
+   "body": "postgres_payments.tf now enables deletion protection and extends the backup retention window to 14 days. The payments cluster is the one database we absolutely cannot afford to lose to a mistaken destroy, and 14 days covers the full reconciliation cycle. No changes to instance sizing or networking. Testing: plan-only review plus console verification on staging.",
+   "title": "postgres-payments: deletion protection and longer backups"
+  },
+  "213": {
+   "body": "is_enabled now supports percentage rollouts: set_flag accepts an optional rollout int, and is_enabled hashes the subject id to decide membership. FeatureFlagService stores the rollout alongside the flag so restarts keep the same cohort. 0 and 100 behave exactly like off and on. Testing: added distribution tests showing roughly even splits at 50%.",
+   "title": "feature-flags: add percentage rollouts to is_enabled"
+  },
+  "214": {
+   "body": "capture_payment now sets an explicit 8s timeout on the payments call instead of relying on the HTTP default, and logs the elapsed time at debug level. Two slow incidents this month were a pain to diagnose because we couldn't tell network time from handler time. The client raises the same error type on timeout, so callers are unaffected. Testing: simulated a slow endpoint and confirmed the timeout fires and the log line appears.",
+   "title": "checkout: add explicit timeout to capture_payment"
+  },
+  "215": {
+   "body": "with_retry now logs each attempt with its delay. was silent before. helps debugging.",
+   "title": "checkout: log attempts in with_retry"
+  },
+  "216": {
+   "body": "weekend log rotation fix. disk filled up sat night. added compression + earlier rotation.",
+   "title": "postgres-payments: fix weekend log rotation"
+  },
+  "217": {
+   "body": "The concurrency-limit test now actually asserts the limit instead of just exercising the code path \u2014 it fans out 2x workers and fails if more than the configured number run at once. The size-matches-config test also checks the configured value is really used by get_pool rather than a hardcoded one. The query-rows test is unchanged. Testing: the strengthened tests fail against the old code and pass now, which is the point.",
+   "title": "payments-api: strengthen pool concurrency tests"
+  }
+ },
+ "threads": {
+  "T-q051": [
+   "hey all, quick q \u2014 the payments-api logs are super noisy since yesterday. is there a debug log in the capture-key helper that fires on every attempt? wondering if i can turn it down locally without breaking anything",
+   "hey dev! yeah that debug line fires per attempt, it's meant for tracing a single order through the handler. totally safe to drop it to warning in your local env, it doesn't gate anything. if you want it quieter everywhere i can put up a small PR to move it behind a verbose flag?",
+   "that would be amazing, yes please! the per-attempt line drowns out everything else when i'm tailing. i'll flip it locally for now, thanks sofia!!"
+  ]
+ }
+}

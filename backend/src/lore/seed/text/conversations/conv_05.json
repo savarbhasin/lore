@@ -1,0 +1,652 @@
+{
+ "conversations": [
+  {
+   "channel": "#team-growth",
+   "days_ago": 32.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [
+      "services/catalog/models.py",
+      "catalog"
+     ],
+     "minutes_after": 0,
+     "text": "Product needs an image_urls field. Storefront wants up to 8 images per product."
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Agreed. Validate URL shape at write time, default to empty list for existing products so nothing breaks."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "Diff is up with exactly that shape."
+    }
+   ],
+   "title": "product images field"
+  },
+  {
+   "channel": "#team-growth",
+   "days_ago": 55.0,
+   "messages": [
+    {
+     "author": "chloe",
+     "mentions": [
+      "email-sender"
+     ],
+     "minutes_after": 0,
+     "text": "The email backlog from this morning is fully drained. SMTP quota was the bottleneck, not our consumers."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "nice. should we get a quota usage alert so we see it coming?"
+    },
+    {
+     "author": "chloe",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Already requested the alert. Quota increases take a day to approve, so early warning matters."
+    }
+   ],
+   "title": "email backlog drained"
+  },
+  {
+   "channel": "#team-growth",
+   "days_ago": 95.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [
+      "services/catalog/app.py",
+      "catalog"
+     ],
+     "minutes_after": 0,
+     "text": "list_products needs sorting. Storefront sorts client-side and pagination breaks."
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Sort in the query: name, price_asc, price_desc. Default stays insertion order."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "Done, pagination consistent now."
+    }
+   ],
+   "title": "catalog sorting"
+  },
+  {
+   "channel": "#team-identity",
+   "days_ago": 45.0,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [
+      "services/auth/app.py",
+      "auth"
+     ],
+     "minutes_after": 0,
+     "text": "login() trims email whitespace now. copy-pasted emails with trailing spaces work."
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "Good. Support saw this weekly."
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Small fix, big relief for support \ud83d\udc9b"
+    }
+   ],
+   "title": "email trim live"
+  },
+  {
+   "channel": "#team-identity",
+   "days_ago": 120.0,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [
+      "identity-api"
+     ],
+     "minutes_after": 0,
+     "text": "Legacy signing key rejected as of today. Old key logins now fail with invalid-token."
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "any client fallout?"
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "None. Rotation completed months ago."
+    }
+   ],
+   "title": "legacy key rejected"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 40.0,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Reminder: checkout code freeze starts Monday for the sale event. Only fixes after that."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "My queue is clear. The validation ordering change is already in."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "clear here too."
+    }
+   ],
+   "title": "sale code freeze"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 90.0,
+   "messages": [
+    {
+     "author": "rohan",
+     "mentions": [
+      "services/checkout/clients/payments.py",
+      "checkout"
+     ],
+     "minutes_after": 0,
+     "text": "capture_payment now validates the amount before calling payments. A $0.00 capture from a rounding bug went too deep last week."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "good. that error had zero context."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "the validation names the order and amount now!! much better \ud83c\udf89"
+    }
+   ],
+   "title": "amount validation"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 40.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "concert last night was unreal. the encore went 20 minutes over"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "jealous!! who did you see"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "i'll drop photos in thread. the light show alone was worth it"
+    }
+   ],
+   "title": "concert encore"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 75.0,
+   "messages": [
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "office playlist is 90% lo-fi now. respect the grind but we need some variety \ud83d\ude2d"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "adding three (3) punk songs. you're welcome"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "balance restored \ud83c\udfb8"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "My ambient synth stays. It has 200 followers."
+    }
+   ],
+   "title": "playlist variety"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 35.0,
+   "messages": [
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Does anyone want two concert tickets for Saturday? I can't go anymore."
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Me!! I will take them \ud83c\udfb6"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "They're yours! I will transfer them tonight."
+    }
+   ],
+   "title": "spare concert tickets"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 60.0,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "My garden finally produced tomatoes! Bringing a bag to the office tomorrow \ud83c\udf45"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "claiming three in advance"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Save me two! I will bring basil in exchange \ud83c\udf31"
+    }
+   ],
+   "title": "garden tomatoes"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 100.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Does anyone have moving boxes? Drowning in boxes over here... wait, I need boxes, not drowning in them. You know what I mean \ud83d\udce6"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "I have a stack from last month. They are in the storage room, help yourself."
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "Lifesaver! Coming by after lunch."
+    }
+   ],
+   "title": "moving boxes"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 33.0,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "hot take: the office AC has two settings, arctic and off"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "I keep a blanket at my desk and I am not ashamed \ud83e\udde3"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "the blanket is the correct response"
+    }
+   ],
+   "title": "office AC"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 70.0,
+   "messages": [
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Found a typo in a three-year-old comment today. Fixed it. You are welcome."
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "heroic work. truly"
+    },
+    {
+     "author": "wei",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "I know."
+    }
+   ],
+   "title": "typo hero"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 150.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Today marks 500 days since someone last said 'quick sync' in this channel. Let us keep the streak alive."
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Noted for the record: this message constitutes a sync about syncs."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 65,
+     "text": "Streak broken. I blame myself."
+    }
+   ],
+   "title": "quick sync streak"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 28.0,
+   "messages": [
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Made too much lasagna again. Containers in the kitchen fridge, help yourselves!"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "on my way"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "saved my lunch. you are the best"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "Enjoy! There is garlic bread too \ud83c\udf5d"
+    }
+   ],
+   "title": "leftover lasagna"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 65.0,
+   "messages": [
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "The farmers market on Saturday had the best strawberries. Fully converted \ud83c\udf53"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Which stall?? I always pick the wrong one"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "The one at the far end with the red awning! Worth the walk \ud83d\ude4f"
+    }
+   ],
+   "title": "farmers market strawberries"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 45.0,
+   "messages": [
+    {
+     "author": "chloe",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "My rabbit chewed through my headphone cable during a 1:1. I said 'my rabbit ate my headset' with a straight face."
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "That is the most valid excuse I have ever heard."
+    },
+    {
+     "author": "chloe",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "My manager just said 'understandable' and moved on."
+    }
+   ],
+   "title": "rabbit vs headset"
+  },
+  {
+   "channel": "#eng",
+   "days_ago": 50.0,
+   "messages": [
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "The transactional outbox writeup is now in the wiki. Ledger entries commit with the outbox row; consumers dedupe on entry id."
+    },
+    {
+     "author": "samir",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Good writeup. Linking it from the ledger README."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "The pattern section would be useful for notifications too."
+    }
+   ],
+   "title": "outbox writeup"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 38.0,
+   "messages": [
+    {
+     "author": "meera",
+     "mentions": [
+      "postgres-ledger"
+     ],
+     "minutes_after": 0,
+     "text": "Ledger backup retention going to 14 days tonight. Config-only change."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "applied. verified in console."
+    }
+   ],
+   "title": "ledger backup retention"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 85.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [
+      "kafka"
+     ],
+     "minutes_after": 0,
+     "text": "Ledger topic message limit going to 2MB. Settlement batches were hitting the broker cap."
+    },
+    {
+     "author": "nora",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Thanks for the heads up \u2014 our batches are the big ones."
+    }
+   ],
+   "title": "kafka message limit"
+  },
+  {
+   "channel": "#parties",
+   "days_ago": 42.0,
+   "messages": [
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Summer picnic date is set! Saturday the 18th, riverside park. Families welcome \ud83c\udf33"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "We will be there! Should I bring anything?"
+    },
+    {
+     "author": "emma",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Just yourselves! Food is covered."
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "bringing the frisbee regardless"
+    }
+   ],
+   "title": "summer picnic"
+  },
+  {
+   "channel": "#parties",
+   "days_ago": 130.0,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "halloween costume contest. winner gets the golden keyboard trophy. start planning"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "I am going as a 500 error. internally everything is fine \ud83c\udfc6"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 35,
+     "text": "going as a loading spinner. just standing in corners buffering"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 50,
+     "text": "these are both elite. competition is ON"
+    }
+   ],
+   "title": "halloween contest"
+  },
+  {
+   "channel": "#wins",
+   "days_ago": 48.0,
+   "messages": [
+    {
+     "author": "ananya",
+     "mentions": [
+      "meera",
+      "oliver"
+     ],
+     "minutes_after": 0,
+     "text": "Meera and Oliver completed the payments cluster Multi-AZ cutover with zero downtime. Excellent execution."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Thank you. The weekend drill made the real thing boring, which is exactly what we wanted."
+    }
+   ],
+   "title": "multiaz cutover kudos"
+  },
+  {
+   "channel": "#eng-leads",
+   "days_ago": 55.0,
+   "messages": [
+    {
+     "author": "lena",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Payments on-call rotation is healthy. No changes proposed this quarter."
+    },
+    {
+     "author": "ananya",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Good to hear. Keep me posted if the load test schedule changes that."
+    }
+   ],
+   "title": "payments on-call health"
+  }
+ ]
+}

@@ -1,0 +1,406 @@
+{
+ "conversations": [
+  {
+   "channel": "#incidents",
+   "days_ago": 108.0,
+   "messages": [
+    {
+     "author": "rohan",
+     "mentions": [
+      "checkout"
+     ],
+     "minutes_after": 0,
+     "text": "Gift orders failing validation. Everything else fine."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "looking at the gift path"
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "the gift-message variant? we just added tests for that!!"
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Same variant. The locale deploy changed message encoding."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "rolling back the locale deploy."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Gift orders recovering."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "confirmed green!! \ud83c\udf89"
+    },
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "Good catch. Locale deploys need gift-variant checks."
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 105,
+     "text": "Adding the check to the deploy list tonight."
+    }
+   ],
+   "title": "gift validation failure"
+  },
+  {
+   "channel": "#social",
+   "days_ago": 82.0,
+   "messages": [
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "ski trip lodge BOOKED. january 12-14. 8 spots"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "IN!! Falling practice continues \u26f7\ufe0f"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "in. boarders represent"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "In!! Bunny slopes!! \ud83d\ude4f"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "in. speaker packed (waterproof, learned my lesson)"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "In!! Apr\u00e8s-ski snacks duty!! \ud83c\udf6b"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 85,
+     "text": "in!! never skied. what could go wrong"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 100,
+     "text": "7/8 FULL. one spot left!"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 115,
+     "text": "MINE. taking the last spot"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 130,
+     "text": "SOLD OUT. ski crew locked \ud83d\udd12"
+    }
+   ],
+   "title": "ski lodge booked"
+  },
+  {
+   "channel": "#food",
+   "days_ago": 85.0,
+   "messages": [
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Melon bread season is OVER. Mourning period begins."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "NOOO. it sells out so fast \ud83d\ude2d"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "What replaces it? Seasonal grief needs a successor"
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Chestnut pastries. Acceptable successor."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "chestnut era begins!! \ud83c\udf30"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "going at lunch. reporting back"
+    },
+    {
+     "author": "raj",
+     "mentions": [],
+     "minutes_after": 200,
+     "text": "report: excellent. grief cancelled"
+    }
+   ],
+   "title": "melon bread ends"
+  },
+  {
+   "channel": "#random",
+   "days_ago": 112.0,
+   "messages": [
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "day 100 of mechanical keyboard. my typing is now 20% louder and 5% better"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 10,
+     "text": "the clack journey continues"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 20,
+     "text": "my neighbors filed a compliment (complaint)"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "complaints are just loud compliments"
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "Standing desk. Silent keyboard. 4 inches. Just saying."
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "WE KNOW, LUCAS"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "day 101: ordering a quieter keyboard. growth"
+    },
+    {
+     "author": "dev",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "character development!!"
+    }
+   ],
+   "title": "keyboard day 100"
+  },
+  {
+   "channel": "#team-checkout",
+   "days_ago": 155.0,
+   "messages": [
+    {
+     "author": "maya",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Aisha's first quarter closes! Storefront polish across the board."
+    },
+    {
+     "author": "aisha",
+     "mentions": [],
+     "minutes_after": 25,
+     "text": "best team!! learned so much \ud83c\udf89"
+    },
+    {
+     "author": "rohan",
+     "mentions": [],
+     "minutes_after": 40,
+     "text": "Your diffs are clean. Keep it up."
+    },
+    {
+     "author": "tom",
+     "mentions": [],
+     "minutes_after": 55,
+     "text": "welcome. stay."
+    },
+    {
+     "author": "kenji",
+     "mentions": [],
+     "minutes_after": 70,
+     "text": "A pleasure pairing with you!"
+    }
+   ],
+   "title": "aisha quarter"
+  },
+  {
+   "channel": "#deploys",
+   "days_ago": 88.0,
+   "messages": [
+    {
+     "author": "lucas",
+     "mentions": [
+      "api-gateway"
+     ],
+     "minutes_after": 0,
+     "text": "Request-id injection rolling out now."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Watching trace coverage."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Half fleet. Traces correlating already."
+    },
+    {
+     "author": "oliver",
+     "mentions": [],
+     "minutes_after": 90,
+     "text": "incident grep twice as fast already."
+    },
+    {
+     "author": "lucas",
+     "mentions": [],
+     "minutes_after": 120,
+     "text": "Full fleet. Every response carries one."
+    },
+    {
+     "author": "meera",
+     "mentions": [],
+     "minutes_after": 140,
+     "text": "Lovely rollout. Textbook canary."
+    }
+   ],
+   "title": "request id rollout"
+  },
+  {
+   "channel": "#pets",
+   "days_ago": 125.0,
+   "messages": [
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "Marathon training starts! 16 weeks. Send endurance \ud83d\udc15"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "pacing the long runs. obviously"
+    },
+    {
+     "author": "ines",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Cheer squad reporting!! \ud83d\udce3"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "You will crush it!! The half was just the beginning \ud83d\udc9b"
+    },
+    {
+     "author": "fatima",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "Week 1 done! Only 15 to go \ud83d\ude05"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "one week at a time. you've got this"
+    }
+   ],
+   "title": "marathon training"
+  },
+  {
+   "channel": "#music",
+   "days_ago": 142.0,
+   "messages": [
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 0,
+     "text": "show three setlist: three songs + the HALF song. our longest show ever"
+    },
+    {
+     "author": "jack",
+     "mentions": [],
+     "minutes_after": 15,
+     "text": "the half song counts. established law"
+    },
+    {
+     "author": "hana",
+     "mentions": [],
+     "minutes_after": 30,
+     "text": "Practicing daily!! Neighbors converted, management next \ud83c\udfb9"
+    },
+    {
+     "author": "zara",
+     "mentions": [],
+     "minutes_after": 45,
+     "text": "limited edition posters for show three \ud83c\udfb8"
+    },
+    {
+     "author": "diego",
+     "mentions": [],
+     "minutes_after": 60,
+     "text": "front row. converted neighbor +1. growing the fanbase"
+    },
+    {
+     "author": "omar",
+     "mentions": [],
+     "minutes_after": 75,
+     "text": "fanbase: 7. stadium tour soon"
+    }
+   ],
+   "title": "show three"
+  }
+ ]
+}

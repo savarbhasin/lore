@@ -1,0 +1,38 @@
+[project]
+name = "lore"
+version = "0.1.0"
+description = "Lore: a company brain on FalkorDB that acts on incidents"
+readme = "README.md"
+authors = [
+    { name = "savarbhasin", email = "savarbhasin446@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.14.3",
+    "e2b>=2.52.0",
+    "edge-tts>=7.3.1",
+    "falkordb>=1.7.1",
+    "fastapi>=0.142.2",
+    "faster-whisper>=1.2.1",
+    "httpx>=0.28.1",
+    "mcp>=2.2.0",
+    "openai>=3.24.0",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.2.4",
+    "sentry-sdk>=2.71.0",
+    "slack-bolt>=1.30.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+lore = "lore.cli:main"
+lore-api = "lore.api:main"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

@@ -1,0 +1,16 @@
+export const LABEL_COLORS: Record<string, string> = {
+  Person: "#38bdf8",
+  Team: "#818cf8",
+  Service: "#34d399",
+  File: "#94a3b8",
+  PR: "#a78bfa",
+  Deploy: "#e879f9",
+  Decision: "#fbbf24",
+  Doc: "#facc15",
+  Incident: "#f87171",
+  Thread: "#22d3ee",
+  Message: "#67e8f9",
+  Ticket: "#fb923c",
+  Procedure: "#a3e635",
+  Repo: "#64748b",
+};
